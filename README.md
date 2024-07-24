@@ -11,7 +11,7 @@ Features
 
 Why Help-Fix?🤖
 
-RoboButler is more than just a robot; it's a step towards integrating robotics into everyday life. Our goal is to build a community that can help enhance and add value to this project. Your contributions and feedback are invaluable to us! Let's make RoboButler even better together! 🌟
+Help-Fix is more than just a robot; it's a step towards integrating robotics into everyday life. Our goal is to build a community that can help enhance and add value to this project. Your contributions and feedback are invaluable to us! Let's make Help-Fix even better together! 🌟
 
 Get Involved 🤖
 
@@ -21,7 +21,7 @@ Fork this repository 🍴
 Clone your fork 📂
 Make your changes ✏️
 Submit a pull request 🚀
-We have included all the 3D models used in RoboButler's construction in this repository. Feel free to modify and improve them. Your creativity is the only limit! 🎨
+We have included all the 3D models used in Help-Fixs construction in this repository. Feel free to modify and improve them. Your creativity is the only limit! 🎨
 
 
 Join our community to stay updated and get support:
