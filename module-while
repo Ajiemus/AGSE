@@ -1,0 +1,9 @@
+cmd = Modul = thread (für die rechen-intensiven cmd)
+while not abort
+if wakeword
+   feedback
+   cmd = get comd ()
+   // cleanup
+   function_to_call = getattr(foo, func_name)
+   ?? return-val process cmd(cmd ) == thread
+   // cleanup
