@@ -1,0 +1,221 @@
+Zustandstabelle
+
+Zustandsname	Bedingung VI	Aktion VO
+1. Zustand „Inaktiv“ 
+(Warten auf Wakeword, „Wartemodus“)
+
+Funktion: 
+standard()
+	Eingangsaktion: 
+„Hallo Helpfix“	Ausgabeaktion: 
+
+Aufruf der Funktion: sprachbefehle()
+
+Sprachausgabe:
+Hallo *name*, wie kann ich dir helfen?“
+	Zustand nach 1 und 2g
+2. Zustand „aktiv“
+(„Lauschmodus“)
+
+Funktion:
+sprachbefehle()	2a) Eingangsaktion:
+„Neue Notiz“	Ausgabeaktion: 
+
+Aufruf der Funktion: notiz_fun()
+
+Sprachausgabe:
+„Starte mit der Notiz“
+
+	Notizton wird in sprachbefehle() in einem  Intervall dauerhaft abgespielt, bis die Notiz nicht gelöscht wird
+	2b) Eingangsaktion:
+„Notiz abspielen“	Ausgabeaktion: 
+
+Sprachausgabe:
+1.	„Notiz wird vorgelesen“
+2.	„Soll die Notiz gelöscht werden?
+Aufruf der Funktion (bei Löschung):
+loeschen()
+
+
+	2c) Eingangsaktion:
+„Notiz löschen“	Ausgabeaktion: 
+
+notiz.txt wird nach Sprachbefehl geleert
+
+Sprachausgabe:
+„Notiz wurde gelöscht“
+	2d) Eingangsaktion:
+„Neuer Name“	Ausgabeaktion: 
+
+Sprachausgabe:
+„Hallo, wie kann ich dich nennen?“
+
+Aufruf der Funktion: name()
+
+	2e) Eingangsaktion:
+„Objektsuche“	Ausgabeaktion: 
+
+Sprachausgabe:
+„Nach was soll gesucht werden?“
+
+Aufruf der Funktion: 
+obj_suche()
+
+	2f) Eingangsaktion:
+„Geschichte erzählen“	Ausgabeaktion: 
+
+Sprachausgabe:
+„Es wird eine Geschichte erzählt?“
+
+Aufruf der Funktion: 
+sprachbefehle()
+
+	2g) Eingangsaktion:
+„Fahren“	Ausgabeaktion: 
+
+Sprachausgabe:
+„Es wird vorwärtsgefahren“
+
+Aufruf der Funktion: 
+vorwaertsfahren()
+
+	2h) Eingangsaktion:
+„abbrechen“	Ausgabeaktion: 
+
+Sprachausgabe:
+„Der Vorgang wurde gestoppt“
+
+Aufruf der Funktion: 
+sprachbefehle()
+
+	2i) Eingangsaktion:
+„beenden“	Ausgabeaktion: 
+
+Sprachausgabe:
+„Auf Wiedersehen *name*“
+
+Aufruf der Funktion: 
+standard()
+
+
+	Zustand nach 2a
+3. Zustand „Neue Notiz“
+
+Funktion:
+notiz_fun()	Eingangsaktion: 
+
+„*Notizinhalt/Memoinhalt*“ 	Ausgabeaktion: 
+
+Sprachausgabe:
+-	„Notiz wurde erfolgreich gespeichert“
+-	ausgabe (String)
+
+Aufruf der Funktion: 
+sprachbefehle()
+
+
+Zustand nach 2b
+
+4. Zustand „Notiz abspielen“/“Notiz löschen“
+
+Funktion:
+loeschen()	Eingangsaktion: 
+
+„ja“
+
+	Ausgabeaktion: 
+
+Sprachausgabe:
+„Notiz wurde gelöscht“
+
+notiz.txt wird nach Sprachbefehl geleert
+Aufruf der Funktion: 
+sprachbefehle()
+
+	Eingangsaktion:
+
+„nein“	Ausgabeaktion: 
+
+Sprachausgabe:
+-	ausgabe (String)
+
+Aufruf der Funktion: 
+sprachbefehle()
+
+Zustand nach 2d
+
+5. Zustand „Neuer Name“
+
+Funktion:
+name()	Eingangsaktion: 
+
+„*name*“	Ausgabeaktion: 
+
+Sprachausgabe:
+begruessung(string)+name(txt) + ausgabe (String)
+
+Aufruf der Funktion: 
+sprachbefehle()
+
+Zustand nach 2e
+
+6. Zustand „Objektsuche“
+
+Funktion:
+obj_suche()	Eingangsaktion: 
+
+„*Objektbezeichnung*“	Ausgabeaktion: 
+
+Sprachausgabe:
+„Es wird nach“ + „*Objektbezeichnung*“ + „gesucht“
+
+Aufruf der Funktion: 
+opencvfunc()
+
+Zustand nach 6
+
+7. Zustand „OpenCV“
+
+Funktion:
+opencvfunc()
+	Eingangsaktion:
+
+Übergabe der Objektbezeichnung aus vorheriger Funktion	Ausgabeaktion: 
+
+Objekt gefunden:
+Sprachausgabe:
+„Es wird wurde das Objekt“ + * Objektbezeichnung* + „gefunden“
+
+
+Aufruf der Funktion: 
+sprachbefehle()
+
+	Eingangsaktion:
+
+„abbrechen“	Ausgabeaktion: 
+
+Aufruf der Funktion: 
+sprachbefehle()
+
+Zustand nach 2g
+
+8. Zustand „Fahren“
+
+Funktion:
+vorwaertsfahren()	Eingangsaktion:
+
+Übergabe der Objektbezeichnung aus vorheriger Funktion	Ausgabeaktion: 
+
+Aufruf der Funktion: 
+distance()
+motor()
+
+	Eingangsaktion:
+
+„abbrechen“	Ausgabeaktion: 
+
+Aufruf der Funktion: 
+sprachbefehle()
+
+
+
